@@ -1,10 +1,46 @@
 import "../styles/app.css";
 import logoCompany from '../images/laptop-code-solid.svg';
 import logoSponsor from '../images/adalab.png';
+import { useState } from "react";
 function App() {
-  return (
-   
+  
+  const [name, setName] = useState ("");
+  const [slogan, setSlogan] = useState ("");
+  const [technologies, setTechnologies] = useState ("");
+  const [repo, setRepo] = useState ("");
+  const [demo, setDemo] = useState ("");
+  const [desc, setDesc] = useState ("");
+  const [autor, setAutor] = useState ("");
+  const [job, setJob] = useState ("");
 
+  // const [image, setImage] = useState ("");
+  // const [photo, setPhoto] = useState ("");
+  
+  const handleChangeInput =(ev) =>{
+    const input = ev.target.id;
+    const value = ev.target.value;
+
+    if (input === "name"){
+      setName (value)
+    } else if (input === "slogan"){
+      setSlogan (value)
+    }else if (input === "technologies"){
+      setTechnologies (value)
+    }else if (input === "repo"){
+      setRepo (value)
+    }else if (input === "demo"){
+      setDemo (value)
+    }else if (input === "desc"){
+      setDesc (value)
+    }else if (input === "autor"){
+      setAutor (value)
+    }else if (input === "job"){
+      setJob (value)
+    }
+  }
+
+
+  return (
   <div className="container">
 
     <header className="header">
@@ -30,24 +66,24 @@ function App() {
           <div className="card__author">
             <div className="card__authorPhoto"></div>
             <p className="card__job">
-              Full stack Developer
+              {job || "Full Stack Developer"}
             </p>
-            <h3 className="card__name">Emmelie Bjôrklund</h3>
+            <h3 className="card__name">{autor || "Anacleta Pérez"}</h3>
           </div>
       
           <div className="card__project">            
-            <h3 className="card__name">Elegant Workspace</h3>
-            <p className="card__slogan">Diseños Exclusivos</p>
-            <h3 className="card__descriptionTitle">Product description</h3>
-            <p className="card__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione</p>
+            <h3 className="card__name">{name || "Mi primera web en React"}</h3>
+            <p className="card__slogan">{slogan || "No lo entiendo, pero lo hago" }</p>
+            <h3 className="card__descriptionTitle">Descripción proyecto</h3>
+            <p className="card__description">{desc || "Aprendiendo a hacer una web usando React"}</p>
 
             <div className="card__technicalInfo">
-              <p className="card__technologies">React JS - HTML - CSS</p>
+              <p className="card__technologies">{technologies || "JavaSricpt y React"}</p>
           
-              <a className="icon icon__www" href="#" title="Haz click para ver el proyecto online">
+              <a className="icon icon__www" href={demo} title="Haz click para ver el proyecto online" target="_blank">
                 Web link
               </a>
-              <a className="icon icon__github" href="#" title="Haz click para ver el código del proyecto">
+              <a className="icon icon__github" href={repo} title="Haz click para ver el código del proyecto" target="_blank">
                 GitHub link
               </a>
             </div>
@@ -58,20 +94,20 @@ function App() {
         <h2 className="title">Información</h2>
         <fieldset className="addForm__group">
           <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
-          <input className="addForm__input" type="text" name="name" id="name" placeholder="Nombre del proyecto"/>
-          <input className="addForm__input" type="text" name="slogan" id="slogan" placeholder="Slogan"/>
+          <input className="addForm__input" type="text" name="name" id="name" placeholder="Nombre del proyecto" onChange={handleChangeInput}/>
+          <input className="addForm__input" type="text" name="slogan" id="slogan" placeholder="Slogan" onChange={handleChangeInput}/>
           <div className="addForm__2col">
-            <input className="addForm__input" type="url" name="repo" id="repo" placeholder="Repositorio"/>
-            <input className="addForm__input" type="url" name="demo" id="demo" placeholder="Demo"/>
+            <input className="addForm__input" type="url" name="repo" id="repo" placeholder="Repositorio" onChange={handleChangeInput}/>
+            <input className="addForm__input" type="url" name="demo" id="demo" placeholder="Demo" onChange={handleChangeInput}/>
           </div>         
-          <input className="addForm__input" type="text" name="technologies" id="technologies" placeholder="Tecnologías"/>
-          <textarea className="addForm__input" type="text" name="desc" id="desc" placeholder="Descripción" rows="5"></textarea>
+          <input className="addForm__input" type="text" name="technologies" id="technologies" placeholder="Tecnologías" onChange={handleChangeInput}/>
+          <textarea className="addForm__input" type="text" name="desc" id="desc" placeholder="Descripción" rows="5" onChange={handleChangeInput}></textarea>
         </fieldset>
 
         <fieldset className="addForm__group">
           <legend className="addForm__title">Cuéntanos sobre la autora</legend>
-          <input className="addForm__input" type="text" name="autor" id="autor" placeholder="Nombre"/>
-          <input className="addForm__input" type="text" name="job" id="job" placeholder="Trabajo"/>
+          <input className="addForm__input" type="text" name="autor" id="autor" placeholder="Nombre" onChange={handleChangeInput}/>
+          <input className="addForm__input" type="text" name="job" id="job" placeholder="Trabajo" onChange={handleChangeInput}/>
         </fieldset>
 
         <fieldset className="addForm__group--upload">
@@ -89,102 +125,6 @@ function App() {
       <img className="logoSponsor" src={logoSponsor} alt="Logo Adalab"/>
     </footer>
 
-    {/*
-        <header className="header">
-          <a href="./">
-            <div className="header_left">
-              <i className="fa-solid fa-cat fa-2xl header_left-icon" aria-hidden="true"></i>
-              <h1 className="header_left-text">Proyectos molones</h1>
-            </div>
-          </a>
-          <img className="header_logo"
-            src="./images/adalab.png"
-            alt="Logo Adalab">
-        </header>
-        <main className="main">
-          <section className="intro">
-            <h1 className="intro_title">Proyectos molones</h1>
-            <p className="intro_text">Escaparate en línea para recoger ideas a través de la tecnología.</p>
-          </section>
-          <a className="linkProject" href="#/">
-            <button className="linkProject_project-btn">Ver Proyectos</button> <!-- TODO - - >
-          </a>
-          <section className="preview">
-            <div className="preview_image" style="background-image: url('./images/project.jpg');"></div>
-            <article className="preview_autor">
-              <section className="infoProject">
-                <div className="infoProject_container">
-                  <hr className="infoProject_container-line1">
-                  <p className="infoProject_container-subtitle">Personal Project Card</p>
-                  <hr className="infoProject_container-line2">
-                </div>
-                <h2 className="infoProject_title">Elegant Workspace</h2>
-                <p className="infoProject_slogan">Diseños Exclusivos</p>
-                <p className="infoProject_desc">Gestión de proyectos en línea, diseñado para simplificar y agilizar tu
-                  trabajo como programadora. Con solo crear una tarjeta para cada proyecto, podrás organizarlos de manera
-                  eficiente. ¡Optimiza tu productividad y alcanza tus metas de manera efectiva con nosotras!</p>
-                <section className="technologies">
-                  <p className="technologies_text">React JS - HTML - CSS</p><button src="" target="_blank"
-                    className="technologies_icon"><i className="fa-solid fa-globe technologies_icon-img"
-                      aria-hidden="true"></i></button><button src="" target="_blank" className="technologies_icon"><i
-                      className="fa-brands fa-github technologies_icon-img" aria-hidden="true"></i></button>
-                </section>
-              </section>
-              <section className="infoAutor">
-                <div className="infoAutor_image" style="background-image: url(&quot;/assets/avatar-a91e8c67.png&quot;);"></div>
-                <p className="infoAutor_job">Full Stack Developer</p>
-                <p className="infoAutor_name">Emmelie Björklund</p><button className="btn"></button>
-              </section>
-            </article>
-          </section>
-          <section className="form"><i className="fa-regular fa-trash-can fa-2xl form_trash" aria-hidden="true"></i>
-            <h2 className="form_title">Información</h2>
-            <section className="form_askInfo">
-              <div className="form_askInfo_container">
-                <p className="form_askInfo_container-subtitle">Cuéntanos sobre el proyecto</p>
-                <hr className="form_askInfo-line">
-              </div>
-            </section>
-            <fieldset className="form_project"><input className="form_project-input" type="text" placeholder="Nombre del proyecto *"
-                name="name" id="name" required="" value="">
-              <p className="error"></p><input className="form_project-input" type="text" name="slogan" id="slogan"
-                placeholder="Slogan *" required="" value="">
-              <p className="error"></p><input className="form_project-input" type="text" name="repo" id="repo" placeholder="Repo *"
-                required="" value="">
-              <p className="error"></p><input className="form_project-input" type="text" placeholder="Demo *" name="demo" id="demo"
-                required="" value="">
-              <p className="error"></p><input className="form_project-input" type="text" placeholder="Tecnologías *"
-                name="technologies" id="technologies" required="" value="">
-              <p className="error"></p><textarea maxlength="300" className="form_project-textarea" type="text"
-                placeholder="Descripción * (Máx. 300 caracteres)" name="desc" id="desc" required=""></textarea>
-              <p className="error"></p>
-            </fieldset>
-            <section className="form_askInfo">
-              <p className="form_askInfo-autor">Cuéntanos sobre la autora</p>
-              <hr className="form_askInfo-line">
-            </section>
-            <fieldset className="form_project"><input className="form_project-input" type="text" placeholder="Nombre *" name="autor"
-                id="autor" required="" value="">
-              <p className="error"></p><input className="form_project-input" type="text" placeholder="Trabajo *" name="job" id="job"
-                required="" value="">
-              <p className="error"></p>
-            </fieldset>
-            <section className="form_btn">
-              <div className="form_btn-first"><label className="form_btn-first-upload">Subir foto del proyecto<input type="file"
-                    style="display: none;"></label><label className="form_btn-first-upload">Subir foto de la autora<input
-                    type="file" style="display: none;"></label></div>
-              <p className="error"></p>
-              <p className="error"></p>
-              <div><button className="form_btn-create">Crear Tarjeta</button></div>
-            </section>
-            <section className="form_card hidden"><span className="form_card-msg"> La tarjeta ha sido creada:</span><a href=""
-                className="form_card-link" target="_blank" rel="noreferrer"></a></section>
-          </section>
-        </main>
-        <footer className="footer"><img className="footer_img"
-            src="./images/adalab.png"
-            alt=""></footer>
-        */}
   </div>
         
     
