@@ -8,13 +8,14 @@ function Main(props) {
     <main className="main">
           <Hero/>
           <Preview object={props.object}/>
-          <Form/>
+          <Form changeCard = {props.changeCard}/>
     </main>
   )
 }
 
 Main.propTypes = {
     object: PropTypes.object,
+    changeCard: PropTypes.func,
 }
 
 export default Main;

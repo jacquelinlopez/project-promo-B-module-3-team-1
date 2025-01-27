@@ -2,29 +2,12 @@ import Button from "./Button";
 import InputButton from "./InputButton";
 
 
-function Form() {
+function Form(props) {
 
     const handleChangeInput =(ev) =>{
         const input = ev.target.id;
         const value = ev.target.value;
-    
-      //   if (input === "name"){
-      //     setName (value)
-      //   } else if (input === "slogan"){
-      //     setSlogan (value)
-      //   }else if (input === "technologies"){
-      //     setTechnologies (value)
-      //   }else if (input === "repo"){
-      //     setRepo (value)
-      //   }else if (input === "demo"){
-      //     setDemo (value)
-      //   }else if (input === "desc"){
-      //     setDesc (value)
-      //   }else if (input === "autor"){
-      //     setAutor (value)
-      //   }else if (input === "job"){
-      //     setJob (value)
-      //   }
+        props.changeCard(input, value);
     }
 
   return (

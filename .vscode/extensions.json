@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "vsls-contrib.codetour",
+        "standard.vscode-standard",
+        "timonvs.reactsnippetsstandard"
+    ]
+}

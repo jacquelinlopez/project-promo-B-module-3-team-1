@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
+import { Value } from "sass";
 
 function App() {
   
@@ -22,15 +23,32 @@ function App() {
   // const [image, setImage] = useState ("");
   // const [photo, setPhoto] = useState ("");
   
-  
-
+  const changeCard = (key, value) => {
+    if (key === "name"){
+      setCard({...card, name: value})
+    } else if (key === "slogan"){
+      setCard({...card, slogan: value})
+    } else if (key === "technologies"){
+      setCard({...card, technologies: value})
+    } else if (key === "repo"){
+      setCard({...card, repo: value})
+    } else if (key === "demo"){
+      setCard({...card, demo: value})
+    } else if (key === "desc"){
+      setCard({...card, desc: value})
+    } else if (key === "autor"){
+      setCard({...card, autor: value})
+    } else if (key === "job"){
+      setCard({...card, job: value})
+    }
+  }
 
   return (
   <div className="container">
 
     <Header/>
 
-    <Main object={card} />
+    <Main object={card} changeCard = {changeCard}/>
 
     <Footer/>
 
