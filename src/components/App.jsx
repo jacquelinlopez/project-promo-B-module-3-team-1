@@ -1,7 +1,7 @@
 import "../styles/app.css";
 import { useState } from "react";
 import Header from "./Header";
-import Main from "./Main";
+import MainAdd from "./MainAdd";
 import Footer from "./Footer";
 import { Value } from "sass";
 
@@ -48,7 +48,7 @@ function App() {
 
     <Header/>
 
-    <Main object={card} changeCard = {changeCard}/>
+    <MainAdd object={card} changeCard = {changeCard}/>
 
     <Footer/>
 

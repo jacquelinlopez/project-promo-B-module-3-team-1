@@ -3,7 +3,7 @@ import Preview from "./Preview";
 import Form from "./Form";
 import PropTypes from "prop-types";
 
-function Main(props) {
+function MainAdd(props) {
   return (
     <main className="main">
           <Hero/>
@@ -13,9 +13,9 @@ function Main(props) {
   )
 }
 
-Main.propTypes = {
+MainAdd.propTypes = {
     object: PropTypes.object,
     changeCard: PropTypes.func,
 }
 
-export default Main;
+export default MainAdd;

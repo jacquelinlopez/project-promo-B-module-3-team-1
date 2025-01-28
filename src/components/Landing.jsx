@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Intro from "./Intro";
-import Card from "./Card";
+import Preview from "./Preview";
 
 function Landing (){
 
@@ -25,10 +25,8 @@ function Landing (){
         <Header/>
         <main className="main">
           <Intro/>
-          <a className="linkProject" href="#/">
-            Nuevo Proyecto
-          </a>
-          <Card data={cardPreview}/>
+         
+          <Preview object={cardPreview}/>
           
         </main>
         <Footer/>
