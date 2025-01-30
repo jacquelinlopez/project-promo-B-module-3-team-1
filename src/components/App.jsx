@@ -3,7 +3,7 @@ import { useState } from "react";
 import Header from "./Header";
 import MainAdd from "./MainAdd";
 import Footer from "./Footer";
-import { Value } from "sass";
+
 
 function App() {
   
@@ -16,13 +16,13 @@ function App() {
     desc:"",
     autor:"",
     job:"",
+    image:"",
+    photo: "",
   })
 
-  
-
-  // const [image, setImage] = useState ("");
-  // const [photo, setPhoto] = useState ("");
-  
+  const updateAvatar = (urlImage, id) => {
+    setCard({...card, [id]: urlImage});
+  };
   const changeCard = (key, value) => {
     if (key === "name"){
       setCard({...card, name: value})
@@ -48,7 +48,7 @@ function App() {
 
     <Header/>
 
-    <MainAdd object={card} changeCard = {changeCard}/>
+    <MainAdd object={card} changeCard={changeCard} updateAvatar={updateAvatar}/>
 
     <Footer/>
 

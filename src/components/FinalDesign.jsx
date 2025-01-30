@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import Intro from "./Intro";
 import Preview from "./Preview";
 
-function Landing (){
+function FinalDesign (){
 
   const [cardPreview, setCardPreview] = useState({
       name: "",
@@ -35,4 +35,4 @@ function Landing (){
     )
 }
 
-export default Landing;
+export default FinalDesign;

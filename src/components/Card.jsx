@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import avatar from "../images/avatar.webp"
 
 function Card(props) {
   return (
@@ -6,7 +7,9 @@ function Card(props) {
           <h2 className="card__projectTitle"><span className="card__projectTitle--text">Personal project card</span></h2>
 
           <div className="card__author">
-            <div className="card__authorPhoto"></div>
+            <div className="card__authorPhoto">
+              <img src={props.data.photo || avatar} alt="" className="card__authorImg"/>
+            </div>
             <p className="card__job">
               {props.data.job || "Full Stack Developer"}
             </p>

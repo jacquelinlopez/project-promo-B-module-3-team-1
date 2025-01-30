@@ -8,7 +8,7 @@ function MainAdd(props) {
     <main className="main">
           <Hero/>
           <Preview object={props.object}/>
-          <Form changeCard = {props.changeCard}/>
+          <Form changeCard={props.changeCard} updateAvatar={props.updateAvatar}/>
     </main>
   )
 }

@@ -32,8 +32,8 @@ function Form(props) {
         </fieldset>
 
         <fieldset className="addForm__group--upload">
-          <InputButton forLabel="image" textLabel="Subir foto del proyecto" nameInput="image" idInput="image" />
-          <InputButton forLabel="photo" textLabel="Subir foto de la autora" nameInput="photo" idInput="photo" />
+          <InputButton inputButton="image" textLabel="Subir foto del proyecto" updateAvatar={props.updateAvatar}/>
+          <InputButton inputButton="photo" textLabel="Subir foto de la autora" updateAvatar={props.updateAvatar}/>
           <Button text="Crear proyecto"/>
         </fieldset>
         
