@@ -34,9 +34,13 @@ function Form(props) {
         <fieldset className="addForm__group--upload">
           <InputButton inputButton="image" textLabel="Subir foto del proyecto" updateAvatar={props.updateAvatar}/>
           <InputButton inputButton="photo" textLabel="Subir foto de la autora" updateAvatar={props.updateAvatar}/>
-          <Button text="Crear proyecto"/>
+          <Button card={props.object} text="Crear proyecto" setUrl={props.setUrl}/>
+          
         </fieldset>
         
+        <fieldset className="fieldset__url">
+        {props.url ? <a className="url" href={props.url} target="_blank">Ver Tarjeta</a>: null}
+        </fieldset>
       </form>
   )
 }

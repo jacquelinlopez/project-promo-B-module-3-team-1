@@ -345,7 +345,17 @@
     justify-content: center;
     padding: 19px;
   }
-  
+   .url{
+    text-align: center;
+   }
+   .fieldset__url{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    margin-bottom: 15px;
+
+   }
   
   
   /* COMPONENTS */

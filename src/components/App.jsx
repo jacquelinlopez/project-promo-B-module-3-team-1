@@ -42,14 +42,18 @@ function App() {
       setCard({...card, job: value})
     }
   }
+  const [url,setUrl]= useState("")
+
 
   return (
   <div className="container">
 
     <Header/>
 
-    <MainAdd object={card} changeCard={changeCard} updateAvatar={updateAvatar}/>
+    <MainAdd object={card} changeCard={changeCard} updateAvatar={updateAvatar} setUrl={setUrl} url={url}/>
 
+
+    
     <Footer/>
 
   </div>
