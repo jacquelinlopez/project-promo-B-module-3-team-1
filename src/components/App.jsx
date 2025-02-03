@@ -3,6 +3,8 @@ import { useState } from "react";
 import Header from "./Header";
 import MainAdd from "./MainAdd";
 import Footer from "./Footer";
+import { Route, Routes } from "react-router-dom";
+import Landing from "./Landing";
 
 
 function App() {
@@ -49,10 +51,12 @@ function App() {
   <div className="container">
 
     <Header/>
+    <Routes>
+    <Route path="/" element={<Landing/>}/>
+    <Route path="/form" element= {<MainAdd object={card} changeCard={changeCard} updateAvatar={updateAvatar} setUrl={setUrl} url={url}/>}/>
+    <Route />
 
-    <MainAdd object={card} changeCard={changeCard} updateAvatar={updateAvatar} setUrl={setUrl} url={url}/>
-
-
+    </Routes>
     
     <Footer/>
 
