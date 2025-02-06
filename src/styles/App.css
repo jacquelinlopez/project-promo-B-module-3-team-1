@@ -136,14 +136,13 @@
   }
   
   .projectImage__Img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     height: 100%;
   }
 
   .preview .card {
     margin-inline: 20px;
-  
     transform: translateY(-45px);
   }
   
@@ -347,12 +346,18 @@
   }
    .url{
     text-align: center;
+    background-color: white;
+    text-decoration: none;
+    width: 100px;
+   border-radius: 20px;
+   
+
    }
    .fieldset__url{
     display: flex;
     justify-content: center;
     align-content: center;
-    background-color: white;
+    
     margin-bottom: 15px;
 
    }

@@ -37,9 +37,9 @@ function Form(props) {
           <Button card={props.object} text="Crear proyecto" setUrl={props.setUrl}/>
           
         </fieldset>
-        
+    
         <fieldset className="fieldset__url">
-        {props.url ? <a className="url" href={props.url} target="_blank">Ver Tarjeta</a>: null}
+        {props.url ? <a className="url" href={props.url} target="_blank">Ver Tarjeta</a>: <p> *Revisa si has rellenado todos los campos </p>}
         </fieldset>
       </form>
   )
